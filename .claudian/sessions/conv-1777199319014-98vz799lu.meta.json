@@ -1,0 +1,23 @@
+{
+  "id": "conv-1777199319014-98vz799lu",
+  "providerId": "claude",
+  "title": "我还剩哪些任务",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1777199319023,
+  "updatedAt": 1777788284341,
+  "lastResponseAt": 1777788284341,
+  "sessionId": "abac4b53-b6c8-4c06-a519-78a1c18b5c83",
+  "providerState": {
+    "providerSessionId": "abac4b53-b6c8-4c06-a519-78a1c18b5c83"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 46585,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 46585,
+    "percentage": 23,
+    "contextWindowIsAuthoritative": true
+  }
+}

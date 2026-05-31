@@ -1,0 +1,24 @@
+{
+  "id": "conv-1777788413377-2ugxrunql",
+  "providerId": "claude",
+  "title": "你的模型是什么",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1777788413378,
+  "updatedAt": 1778068508036,
+  "lastResponseAt": 1777790575348,
+  "sessionId": "48dfc589-2ca1-4b06-b5a7-d04bb1408a39",
+  "providerState": {
+    "providerSessionId": "48dfc589-2ca1-4b06-b5a7-d04bb1408a39"
+  },
+  "currentNote": "MyLife/考试及pre时间要求等.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 226844,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 226844,
+    "percentage": 100,
+    "contextWindowIsAuthoritative": true
+  }
+}

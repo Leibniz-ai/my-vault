@@ -1,0 +1,23 @@
+{
+  "id": "conv-1778069200493-8nezrjhmb",
+  "providerId": "claude",
+  "title": "帮我制定下今天的计划，现在已经八点了，需要做的事，有腾讯算法竞赛优化，大概半个小时，然后工作安排梳理...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1778069200494,
+  "updatedAt": 1778117490868,
+  "lastResponseAt": 1778071098477,
+  "sessionId": "cf6eb958-7748-4812-87ff-64eaf7f06294",
+  "providerState": {
+    "providerSessionId": "cf6eb958-7748-4812-87ff-64eaf7f06294"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 45795,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 45795,
+    "percentage": 23,
+    "contextWindowIsAuthoritative": true
+  }
+}

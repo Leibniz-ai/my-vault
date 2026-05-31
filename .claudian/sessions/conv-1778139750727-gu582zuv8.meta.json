@@ -1,0 +1,23 @@
+{
+  "id": "conv-1778139750727-gu582zuv8",
+  "providerId": "claude",
+  "title": "帮我制定下今天的计划，昨天的任务都没完成，还是继续花一个小时做竞赛，然后上班工作的内容花两个小时，到...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1778139750730,
+  "updatedAt": 1779630639101,
+  "lastResponseAt": 1779630639101,
+  "sessionId": "c89c7eef-77ee-4c8e-bcdb-6120aea0a699",
+  "providerState": {
+    "providerSessionId": "c89c7eef-77ee-4c8e-bcdb-6120aea0a699"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

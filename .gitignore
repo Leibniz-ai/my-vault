@@ -1,0 +1,11 @@
+# Obsidian workspace (device-specific, shouldn't sync)
+.obsidian/workspace.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp files
+*.tmp
+~$*

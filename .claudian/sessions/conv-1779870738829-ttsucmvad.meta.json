@@ -1,0 +1,24 @@
+{
+  "id": "conv-1779870738829-ttsucmvad",
+  "providerId": "claude",
+  "title": "Plan career resume strategy",
+  "titleGenerationStatus": "success",
+  "createdAt": 1779870738830,
+  "updatedAt": 1780208877356,
+  "lastResponseAt": 1780208877356,
+  "sessionId": "dd9e3a84-0e17-4867-8d37-efca69b5355a",
+  "providerState": {
+    "providerSessionId": "dd9e3a84-0e17-4867-8d37-efca69b5355a"
+  },
+  "currentNote": "MyLife/Daily/2026-05-27.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0,
+    "contextWindowIsAuthoritative": true
+  }
+}

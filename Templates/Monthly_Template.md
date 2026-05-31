@@ -1,0 +1,114 @@
+# 月度概览 | 🔙 [[MyLife/Yearly/<% moment(tp.file.title, "YYYY-MM").format("YYYY") %>|年度展望]]
+---
+
+## 🎯 月度计划
+
+- [ ] 
+- [ ] 
+
+## 📊 月度状态热力图
+
+```dataviewjs
+// 1. 获取当前文件的月份信息
+const dateStr = dv.current().file.name;
+const currentMonth = moment(dateStr, "YYYY-MM");
+
+// 2. 表情定义
+function getMoodEmoji(score) {
+    if (!score && score !== 0) return "⚪"; 
+    if (score >= 9) return "🤩";
+    if (score >= 7) return "😊";
+    if (score >= 5) return "😐";
+    if (score >= 3) return "😞";
+    return "😭";
+}
+
+// 3. 准备数据
+let days = {}; 
+for (let page of dv.pages('"MyLife/Daily"')) {
+    if (!page.file.name.startsWith(dateStr)) continue;
+    const score = page.score ?? null;
+    days[page.file.name] = {
+        emoji: getMoodEmoji(score),
+        score: score,
+        path: page.file.path
+    };
+}
+
+// 4. 画日历表格
+let html = "<table style='width:100%; table-layout: fixed; border-collapse: collapse;'>";
+
+// 表头 (稍微放松一点)
+html += "<tr style='color:gray; font-size:0.8em;'>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Mon</th>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Tue</th>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Wed</th>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Thu</th>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Fri</th>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Sat</th>";
+html += "<th style='text-align:center !important; padding:5px 0;'>Sun</th>";
+html += "</tr>";
+
+let startDay = currentMonth.clone().startOf('month').day(); 
+if (startDay === 0) startDay = 7; 
+const totalDays = currentMonth.daysInMonth();
+
+let dayCount = 1;
+let rows = 6; 
+
+for (let r = 0; r < rows; r++) {
+    if (dayCount > totalDays) break;
+
+    html += "<tr>";
+    for (let c = 1; c <= 7; c++) {
+        if ((r === 0 && c < startDay) || dayCount > totalDays) {
+            html += "<td></td>";
+            continue;
+        }
+
+        let dateKey = currentMonth.format("YYYY-MM") + "-" + String(dayCount).padStart(2, '0');
+        let data = days[dateKey];
+        let targetPath = `MyLife/Daily/${dateKey}`;
+        
+        let cellContent = "";
+        
+        // ✨ 样式调整：
+        // margin-bottom: 4px; -> 让数字和下面的内容分开一点，不那么挤
+        let commonStyle = "display:block; width:100%; text-align:center; text-decoration:none; line-height:1.2; margin:0;";
+        
+        if (data) {
+            // === 有日记 ===
+            cellContent += `<a class="internal-link" href="${data.path}" style="${commonStyle} color:inherit;">`;
+            
+            // 日期
+            cellContent += `<div style="font-weight:bold; font-size:0.9em; margin-bottom:4px;">${dayCount}</div>`;
+            // 表情
+            cellContent += `<div style="font-size:1.3em;">${data.emoji}</div>`;
+            // 分数
+            if (data.score !== null) cellContent += `<div style="font-size:0.6em; color:gray; margin-top:2px;">${data.score}</div>`;
+            
+            cellContent += `</a>`;
+        } else {
+            // === 无日记 ===
+            cellContent += `<a class="internal-link" href="${targetPath}" style="${commonStyle} color:var(--text-muted);" title="点击创建">`;
+            
+            // 日期
+            cellContent += `<div style="font-weight:bold; font-size:0.9em; margin-bottom:4px; opacity:0.7;">${dayCount}</div>`;
+            // 横杠
+            cellContent += `<div style="font-size:1.2em; opacity:0.3;">-</div>`;
+            
+            cellContent += `</a>`;
+        }
+
+        // ✨ 关键调整点：padding: 8px 0;
+        // 把这里改大，格子就变高；改小，格子就变扁。8px 是个很舒服的高度。
+        // vertical-align: middle; 确保内容垂直居中
+        html += `<td style='padding: 15px 0; text-align: center; vertical-align: middle;'>${cellContent}</td>`;
+        dayCount++;
+    }
+    html += "</tr>";
+}
+html += "</table>";
+
+dv.paragraph(html);
+```

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1777877639833-iy3xquj91",
+  "providerId": "claude",
+  "title": "五一假期我已经浑浑噩噩四天了，我应该做些什么，来让自己开心一些，充实一些",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1777877639836,
+  "updatedAt": 1778068507062,
+  "lastResponseAt": 1777947730070,
+  "sessionId": "96c1bc75-aa5a-4249-9c69-9c1087a44686",
+  "providerState": {
+    "providerSessionId": "96c1bc75-aa5a-4249-9c69-9c1087a44686"
+  },
+  "usage": {
+    "model": "opus",
+    "inputTokens": 46366,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 46366,
+    "percentage": 23,
+    "contextWindowIsAuthoritative": true
+  }
+}
